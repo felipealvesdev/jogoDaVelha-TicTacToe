@@ -47,7 +47,7 @@ export default function Tabuleiro(){
             return;
         }else{
             setBlankOne(player);
-            setBoardArrayX( arr =>[...arr, arr[0]= player]);
+            setBoardArrayX( arr =>[player, arr[1], arr[2]]);
             verifyingVictory();
         }
         switchPlayer();
@@ -58,7 +58,7 @@ export default function Tabuleiro(){
             return;
         }else{
             setBlankTwo(player);
-            setBoardArrayX( arr =>[...arr, arr[1]= player]);
+            setBoardArrayX( arr =>[arr[0], player, arr[2]]);
             verifyingVictory();
         }
         switchPlayer();
@@ -69,7 +69,7 @@ export default function Tabuleiro(){
             return;
         }else{
             setBlankThree(player);
-            setBoardArrayX( arr =>[...arr, arr[2]= player]);
+            setBoardArrayX( arr =>[arr[0], arr[1], player]);
             verifyingVictory();
         }
         switchPlayer();
@@ -80,7 +80,7 @@ export default function Tabuleiro(){
             return;
         }else{
             setBlankFour(player);
-            setBoardArrayY( arr =>[...arr, arr[0]= player]);
+            setBoardArrayY( arr =>[player, arr[1], arr[2]]);
             verifyingVictory();
         }
         switchPlayer();
@@ -91,7 +91,7 @@ export default function Tabuleiro(){
             return;
         }else{
             setBlankFive(player);
-            setBoardArrayY( arr =>[...arr, arr[1]= player]);
+            setBoardArrayY( arr =>[arr[0], player, arr[2]]);
             verifyingVictory();
         }
         switchPlayer();
@@ -102,7 +102,7 @@ export default function Tabuleiro(){
             return;
         }else{
             setBlankSix(player);
-            setBoardArrayY( arr =>[...arr, arr[2]= player]);
+            setBoardArrayY( arr =>[arr[0], arr[1], player]);
             verifyingVictory();
         }
         switchPlayer();
@@ -113,7 +113,7 @@ export default function Tabuleiro(){
             return;
         }else{
             setBlankSeven(player);
-            setBoardArrayZ( arr =>[...arr, arr[0]= player]);
+            setBoardArrayZ( arr =>[player, arr[1], arr[2]]);
             verifyingVictory();
         }
         switchPlayer();
@@ -124,7 +124,7 @@ export default function Tabuleiro(){
             return;
         }else{
             setBlankEight(player);
-            setBoardArrayZ( arr =>[...arr, arr[1]= player]);
+            setBoardArrayZ( arr =>[arr[0], player, arr[2]]);
             verifyingVictory();
         }
         switchPlayer();
@@ -135,7 +135,7 @@ export default function Tabuleiro(){
             return;
         }else{
             setBlankNine(player);
-            setBoardArrayZ( arr =>[...arr, arr[2]= player]);
+            setBoardArrayZ(arr =>[arr[0], arr[1], player]);
             verifyingVictory();
         }
         switchPlayer();
@@ -158,34 +158,33 @@ export default function Tabuleiro(){
 
 
 
-    const verifyingVictory = ():void =>{
-
+    const verifyingVictory = ():void =>{       
         if(boardArrayX[0] === boardArrayX[1] && boardArrayX[0] === boardArrayX[2] && boardArrayX[1] === boardArrayX[2] ){
-            setWinner(prev => prev = boardArrayX[0]);
-            setResultColor(prev => prev = 1);
+            setWinner(boardArrayX[0]);
+            setResultColor(1);
         }else if (boardArrayY[0] === boardArrayY[1] && boardArrayY[0] === boardArrayY[2] && boardArrayY[1] === boardArrayY[2] ){
-            setWinner(prev => prev =  boardArrayY[0]);
-            setResultColor(prev => prev = 2);
+            setWinner( boardArrayY[0]);
+            setResultColor(2);
         }else if (boardArrayZ[0] === boardArrayZ[1] && boardArrayZ[0] === boardArrayZ[2] && boardArrayZ[1] === boardArrayZ[2] ){
-            setWinner(prev => prev =  boardArrayZ[0]);
-            setResultColor(prev => prev = 3);// CONDICOES DE VITORIA DA --- LINHA --- X,Y,Z FEITAS
+            setWinner( boardArrayZ[0]);
+            setResultColor(3);// CONDICOES DE VITORIA DA --- LINHA --- X,Y,Z FEITAS
         }else if(boardArrayX[0] === boardArrayY[0] && boardArrayX[0] === boardArrayZ[0] && boardArrayY[0] === boardArrayZ[0]){
-            setWinner(prev => prev =  boardArrayX[0]);
-            setResultColor(prev => prev = 4);
+            setWinner( boardArrayX[0]);
+            setResultColor(4);
         }else if(boardArrayX[1] === boardArrayY[1] && boardArrayX[1] === boardArrayZ[1] && boardArrayY[1] === boardArrayZ[1]){
-            setWinner(prev => prev = boardArrayX[1]);
-            setResultColor(prev => prev = 5);
+            setWinner(boardArrayX[1]);
+            setResultColor(5);
         }else if(boardArrayX[2] === boardArrayY[2] && boardArrayX[2] === boardArrayZ[2] && boardArrayY[2] === boardArrayZ[2]){
-            setWinner(prev => prev = boardArrayX[2]);
-            setResultColor(prev => prev = 6);// CONDICOES DE VITORIA DAS --- COLUNAS --- FEITAS;
+            setWinner(boardArrayX[2]);
+            setResultColor(6);// CONDICOES DE VITORIA DAS --- COLUNAS --- FEITAS;
         }else if(boardArrayX[0] === boardArrayY[1] && boardArrayX[0] === boardArrayZ[2] && boardArrayY[1] === boardArrayZ[2]){
-            setWinner(prev => prev = boardArrayX[0]);
-            setResultColor(prev => prev = 7);
+            setWinner(boardArrayX[0]);
+            setResultColor(7);
         }else if(boardArrayX[2] === boardArrayY[1] && boardArrayX[2] === boardArrayZ[0] && boardArrayY[1] === boardArrayZ[0]){
-            setWinner(prev => prev = boardArrayX[2]);
-            setResultColor(prev => prev = 8);// VERIFICACOES FORAM FEITAS
+            setWinner(boardArrayX[2]);
+            setResultColor(8);// VERIFICACOES FORAM FEITAS
         }else if(turn === 9){
-            setWinner(prev => prev = "Empate");
+            setWinner("Empate");
         }
     }
 
@@ -196,24 +195,24 @@ export default function Tabuleiro(){
     },[player,winner]);
 
     const handleReset = ():void =>{
-        setBlankOne(prev => prev = "");
-        setBlankTwo(prev => prev = "");
-        setBlankThree(prev => prev = "");
-        setBlankFour(prev => prev = "");
-        setBlankFive(prev => prev = "");
-        setBlankSix(prev => prev = "");
-        setBlankSeven(prev => prev = "");
-        setBlankEight(prev => prev = "");
-        setBlankNine(prev => prev = "");
+        setBlankOne("");
+        setBlankTwo("");
+        setBlankThree("");
+        setBlankFour("");
+        setBlankFive("");
+        setBlankSix("");
+        setBlankSeven("");
+        setBlankEight("");
+        setBlankNine("");
 
-        setBoardArrayX(arr => arr = ["a","b","c"]);
-        setBoardArrayY(arr => arr = ["d","e","f"]);
-        setBoardArrayZ(arr => arr = ["g","h","i"]);
+        setBoardArrayX(["a","b","c"]);
+        setBoardArrayY(["d","e","f"]);
+        setBoardArrayZ(["g","h","i"]);
 
-        setWinner(prev => prev = "");
-        setTurn(prev => prev = 0);
-        setPlayer(prev => prev = "player 1");
-        setResultColor(prev => prev = 0);
+        setWinner("");
+        setTurn(0);
+        setPlayer("player 1");
+        setResultColor(0);
     }
 
     return(
