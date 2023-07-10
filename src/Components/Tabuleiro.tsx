@@ -190,9 +190,10 @@ export default function Tabuleiro(){
     }
 
     useEffect(()=>{
+        console.log(winner);
         verifyingVictory();
         //eslint-disable-next-line
-    },[player]);
+    },[player,winner]);
 
     const handleReset = ():void =>{
         setBlankOne(prev => prev = "");
