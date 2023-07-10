@@ -30,6 +30,7 @@ export default function Tabuleiro(){
     const [boardArrayZ, setBoardArrayZ] = useState<string[]>(["g","h","i"]);
 
     useEffect(()=>{
+        console.log(player);
         verifyingVictory();
         // eslint-disable-next-line
     },[player])
