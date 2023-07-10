@@ -179,4 +179,8 @@
     background-color: #222;
 }
 
-
+@media(max-width:768px){
+    .globalContainer{
+        width: 350px;
+    }
+}
