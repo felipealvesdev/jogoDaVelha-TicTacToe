@@ -47,7 +47,7 @@ export default function Tabuleiro(){
             return;
         }else{
             setBlankOne(player);
-            setBoardArrayX( arr =>[...arr, arr[0]= player]);
+            setBoardArrayX( arr =>[player, arr[1],arr[2]]);
             verifyingVictory();
         }
         switchPlayer();
@@ -58,7 +58,7 @@ export default function Tabuleiro(){
             return;
         }else{
             setBlankTwo(player);
-            setBoardArrayX( arr =>[...arr, arr[1]= player]);
+            setBoardArrayX( arr =>[arr[0], player, arr[2]]);
             verifyingVictory();
         }
         switchPlayer();
@@ -69,7 +69,7 @@ export default function Tabuleiro(){
             return;
         }else{
             setBlankThree(player);
-            setBoardArrayX( arr =>[...arr, arr[2]= player]);
+            setBoardArrayX( arr =>[arr[0], arr[1], player]);
             verifyingVictory();
         }
         switchPlayer();
@@ -80,7 +80,7 @@ export default function Tabuleiro(){
             return;
         }else{
             setBlankFour(player);
-            setBoardArrayY( arr =>[...arr, arr[0]= player]);
+            setBoardArrayY( arr =>[player, arr[1], arr[2]]);
             verifyingVictory();
         }
         switchPlayer();
@@ -91,7 +91,7 @@ export default function Tabuleiro(){
             return;
         }else{
             setBlankFive(player);
-            setBoardArrayY( arr =>[...arr, arr[1]= player]);
+            setBoardArrayY( arr =>[arr[0], player, arr[2]]);
             verifyingVictory();
         }
         switchPlayer();
@@ -102,7 +102,7 @@ export default function Tabuleiro(){
             return;
         }else{
             setBlankSix(player);
-            setBoardArrayY( arr =>[...arr, arr[2]= player]);
+            setBoardArrayY( arr =>[arr[0], arr[1], player]);
             verifyingVictory();
         }
         switchPlayer();
@@ -113,7 +113,7 @@ export default function Tabuleiro(){
             return;
         }else{
             setBlankSeven(player);
-            setBoardArrayZ( arr =>[...arr, arr[0]= player]);
+            setBoardArrayZ( arr =>[player, arr[1], arr[2]]);
             verifyingVictory();
         }
         switchPlayer();
@@ -124,7 +124,7 @@ export default function Tabuleiro(){
             return;
         }else{
             setBlankEight(player);
-            setBoardArrayZ( arr =>[...arr, arr[1]= player]);
+            setBoardArrayZ( arr =>[arr[0], player, arr[2]]);
             verifyingVictory();
         }
         switchPlayer();
@@ -135,7 +135,7 @@ export default function Tabuleiro(){
             return;
         }else{
             setBlankNine(player);
-            setBoardArrayZ( arr =>[...arr, arr[2]= player]);
+            setBoardArrayZ( arr =>[arr[0], arr[1], player]);
             verifyingVictory();
         }
         switchPlayer();
