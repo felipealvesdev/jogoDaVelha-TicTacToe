@@ -190,7 +190,7 @@ export default function Tabuleiro(){
     }
 
     useEffect(()=>{
-        console.log(winner);
+        console.log("O vencedor é: " + winner);
         verifyingVictory();
         //eslint-disable-next-line
     },[player,winner]);
