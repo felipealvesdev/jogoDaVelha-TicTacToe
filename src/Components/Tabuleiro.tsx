@@ -29,9 +29,7 @@ export default function Tabuleiro(){
     const [boardArrayY, setBoardArrayY] = useState<string[]>(["d","e","f"]);
     const [boardArrayZ, setBoardArrayZ] = useState<string[]>(["g","h","i"]);
 
-    useEffect(()=>{
-        verifyingVictory();
-    },[player]);
+    
 
     // FUNCAO DE TROCAR DE JOGADOR FUNCIONANDO PERFEITAMENTE
     const switchPlayer = ():void =>{
@@ -190,6 +188,11 @@ export default function Tabuleiro(){
             setWinner(prev => prev = "Empate");
         }
     }
+
+    useEffect(()=>{
+        verifyingVictory();
+        //eslint-disable-next-line
+    },[player]);
 
     const handleReset = ():void =>{
         setBlankOne(prev => prev = "");
